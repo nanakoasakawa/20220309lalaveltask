@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(56, 2, 126);
+}
+
+.form {
+    margin: 100px 150px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: "Shippori Mincho", serif;
+    line-height: 40px;
+}
+
+th {
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+}
+
+.label1 {
+    font-size: 30px;
+}
+
+.botton1 {
+    border-radius: 50px;
+    background-color: white;
+    border: solid 2px purple;
+    color: purple;
+}
+
+.botton2 {
+    border-radius: 5px;
+    background-color: white;
+    border: solid 2px orange;
+    color: orange;
+    writing-mode: vertical-rl;
+}
+
+.botton3 {
+    border-radius: 5px;
+    background-color: white;
+    border: solid 2px rgb(47, 255, 245);
+    color: rgb(47, 255, 245);
+    writing-mode: vertical-rl;
+}
