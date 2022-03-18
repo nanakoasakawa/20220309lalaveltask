@@ -17,7 +17,11 @@ class TodoController extends Controller
     }
     public function update(Request $request)
     {
-        return view('/todo/update');
+        $this->validate($request, Author::$rules);
+        $form = $request->all();
+        unset($form['_token']);
+        Author::where('update', $request->update)->update($form);
+        return redirect('/');
     }
     public function delete(Request $request)
     {

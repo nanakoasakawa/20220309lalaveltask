@@ -33,7 +33,7 @@
           <th>削除</th>
         </tr>
         <tr>
-          <td>2022/3/10</td>
+          <td>{{$form->update}}</td>
           <td><input type="text" name="content"></td>
           <td><input type="submit" class="botton2" value="更新"></td>
           <td><input type="submit" class="botton3" value="削除"></td>
