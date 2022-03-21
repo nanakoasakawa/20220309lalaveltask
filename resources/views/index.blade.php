@@ -32,12 +32,20 @@
           <th>更新</th>
           <th>削除</th>
         </tr>
+       @foreach ($todos as $todo)
         <tr>
-          <td>{{$form->update}}</td>
+          <td></td>
           <td><input type="text" name="content"></td>
-          <td><input type="submit" class="botton2" value="更新"></td>
-          <td><input type="submit" class="botton3" value="削除"></td>
+          <td>
+            <form action="/todo/update" method="POST">
+              <input type="submit" class="botton2" value="更新">
+          </td>
+          <td>
+            <form action="/todo/delete" method="POST">
+              <input type="submit" class="botton3" value="削除">
+          </td>
         </tr>
+       @endforeach
       </table>
   </div>
 

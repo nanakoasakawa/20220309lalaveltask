@@ -9,12 +9,18 @@ class TodoController extends Controller
 {
     public function index(Request $request)
     {
-        return view('/');
+        $todos = Todo::all();
+        return view('index', ['todo' => $todos]);
     }
+
     public function create(Request $request)
     {
-        return view('/todo/create');
+        Todo::create([
+            'todo' => $request
+        ])
+        return redirect('index');
     }
+
     public function update(Request $request)
     {
         $this->validate($request, Author::$rules);
