@@ -10,27 +10,25 @@ class TodoController extends Controller
     public function index(Request $request)
     {
         $todos = Todo::all();
-        return view('index', ['todo' => $todos]);
+        return view('index', ['todos' => $todos]);
     }
 
     public function create(Request $request)
     {
         Todo::create([
-            'todo' => $request
-        ])
+            'todos' => $request,
+        ]);
         return redirect('index');
     }
 
     public function update(Request $request)
     {
-        $this->validate($request, Author::$rules);
-        $form = $request->all();
-        unset($form['_token']);
-        Author::where('update', $request->update)->update($form);
-        return redirect('/');
+        Todo::where('update', $request->update)->update($todos);
+        return redirect('index');
     }
     public function delete(Request $request)
     {
-        return view('/todo/delete');
+        Todo::where('update', $request->delete)->delete($todos);
+        return redirect('index');
     }
 }

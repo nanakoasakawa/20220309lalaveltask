@@ -32,10 +32,10 @@
           <th>更新</th>
           <th>削除</th>
         </tr>
-       @foreach ($todos as $todo)
+       @foreach ($todos as $todos)
         <tr>
           <td></td>
-          <td><input type="text" name="content"></td>
+          <td><input type="text" value= "{{ $todos }}" name="content"></td>
           <td>
             <form action="/todo/update" method="POST">
               <input type="submit" class="botton2" value="更新">
