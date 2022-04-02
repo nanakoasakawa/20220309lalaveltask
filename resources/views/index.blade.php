@@ -34,7 +34,9 @@
         </tr>
        @foreach ($todos as $todo)
         <tr>
-          <td></td>
+          <td>
+            {{ $todo->created_at }}
+          </td>
           <td><input type="text" value= "{{ $todo }}" name="content"></td>
           <td>
             <form action="/todo/update" method="POST">
