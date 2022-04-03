@@ -23,6 +23,7 @@
       <label class="label1">Todo List</label><br>
       <input type="text" name="content">
       <input type="submit" class="botton1" value="追加"><br>
+      </form>
       <table>
         <tr>
           <th>作成日</th>
@@ -37,14 +38,18 @@
           <td>
             {{ $todo->created_at }}
           </td>
-          <td><input type="text" value= "{{ $todo }}" name="content"></td>
           <td>
             <form action="/todo/update" method="POST">
+              @csrf
+              <input type="text" value= "{{ $todo->content }}" name="content">
+              <input type="hidden" value = "{{ $todo->id }}" name="update"/>
               <input type="submit" class="botton2" value="更新">
+</form>
           </td>
           <td>
             <form action="/todo/delete" method="POST">
               <input type="submit" class="botton3" value="削除">
+</form>
           </td>
         </tr>
        @endforeach
